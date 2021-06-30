@@ -1,0 +1,146 @@
+%
+\chapter{Introduction}
+\section{Properties of Numerical Semigroups}
+\begin{boxDefinition}{Numerical Semigroup}
+    \begin{boxNote}{}
+        Zero is a generator of every numerical subgroup, it is just not explicitly mentioned.
+    \end{boxNote}
+\end{boxDefinition}
+\begin{boxExample}{}
+    Let \( S := \gen{6, 9, 20} \)
+    Then:
+    \[ S = \{ \} \]
+    \begin{boxTODO}{}
+        Fill in mcnugget set.
+        Fix wording below.
+    \end{boxTODO}
+    \begin{boxNote}{}
+        This is called the "McNugget Semigroup", as McDonald's Chicken Nuggets used to come in sizes 6, 9, or 20.
+        The question was, "what's the largest number of McNuggets you cannot recieve from McDonalds"?
+    \end{boxNote}
+\end{boxExample}
+\begin{boxTheorem}{}
+    Every numerical subgroup has a unique minimal generating set.
+    \begin{boxExample}{}
+        \[ S = \gen{6, 9, 20} = \gen{6, 9, 18, 20} \]
+    \end{boxExample}
+\end{boxTheorem}
+\begin{boxDefinition}{Multiplicity}
+    Let \( S \) be a numerical subgroup.
+    The multiplicity of \( S \), denoted \( m(S) \), is the minimal nonzero generator of \( S \).
+    That is:
+    \[ m(S) := \Min(S \setminus \{ 0 \} ) \]
+\end{boxDefinition}
+\begin{boxDefinition}{Embedding Dimension}
+    Let \( S \) be a numerical subgroup.
+    The embedding dimension of \( S \), denoted \( e(S) \), is the number of minimal nonzero generators of \( S \).
+    \begin{boxExample}{}
+        \[ e(\gen{6, 9, 20} = 3 \]
+    \end{boxExample}
+\end{boxDefinition}
+\begin{boxDefinition}{Frobenius Number}
+    Let \( S \) be a numerical subgroup.
+    The Frobenius Number of \( S \), denoted \( F(S) \), is the largest non-negative integer not in \( S \).
+    That is:
+    \[ F(S) := \Max(\ZZ_{\geq 0} \setminus S) \]
+\end{boxDefinition}
+\begin{boxNote}{}
+    Often we will require:
+    \[ \abs{\NN \setminus S} < \infty \]
+    So that these properties are well defined.
+\end{boxNote}
+\begin{boxDefinition}{}
+    
+\end{boxDefinition}
+\begin{boxExample}{The Four Properties}
+    Let \( S := \gen{6, 9, 20} \). Then:
+    \begin{align*}
+        m(S) &= 6 &&  \text{Smallest generator}\\
+        e(S) &= 3 &&  \text{Number of generators}\\
+        F(S) &= 43 && \text{Largest "gap"}\\
+        g(S) &= 22 && \text{Number of "gaps"}
+    \end{align*}
+\end{boxExample}
+
+
+\begin{boxConcept}{}
+    \begin{boxDefinition}{}
+        Semigroup isomorphism
+        \begin{boxTODO}{}
+            ?
+        \end{boxTODO}
+    \end{boxDefinition}
+    \begin{boxExample}{}
+        \begin{align*}
+            S &:= \gen{4, 6}\\
+            T &:= \gen{2, 3}
+        \end{align*}
+        We claim, without proving:
+        \[ S \isoto T \]
+        We notice \( \NN \setminus S \) is infinite, but \( \NN \setminus T \) is not.
+    \end{boxExample}
+\end{boxConcept}
+
+
+\begin{boxConcept}{Factorizations}
+    If \( S := \gen{6, 9, 20} \) then:
+    \[ 60 = 4\cdot 6 + 4\cdot 9 = 3\cdot 20 \]
+    This shows factorizations are not unique.
+    So we define the set of all vectors:
+    \begin{boxDefinition}{}
+        \[ Z_S(\ell) := \{ a \in \NN^k\ :\ a_1n_1 + \cdots a_kn_k = \ell \} \]
+        Where \( \ell \in S \).
+    \end{boxDefinition}
+    \begin{boxExample}{}
+        \[
+            Z(60) = 
+            \left\{
+            \begin{array}{c}
+            (10, 0, 0),\\
+            (7, 2, 0),\\
+            (4, 4, 0),\\
+            (0, 0, 3),\\
+            (1, 6, 0)
+            \end{array}
+            \right\}
+        \]
+    \end{boxExample}
+\end{boxConcept}
+
+\section{The Apery Set}
+\begin{boxDefinition}{}
+    Let \( S \subseteq \NN \) be a numerical semigroup.\\
+    Let \( m := m(S) \) be the multiplicity of \( S \).\\
+    Then we define the Apery set:
+    \[ \Ap(S) := \{ n\in S\ :\ n-m \not\in S \]
+    \begin{boxNote}{}
+        These can be though of as the element "just barely inside" of \( S \)
+    \end{boxNote}
+    \begin{boxNote}{}
+        Note the elements of the Apery set are distinct modulo \( m \).
+    \end{boxNote}
+\end{boxDefinition}
+\begin{boxProblem}{}
+    Let:
+    \[ S := \gen{3, 5, 7}
+    \tcblower
+    This implies:
+    \[ S = \{ 0, 3, \underbrace{5, 6, 7}, 8, 9, 10, \cdots \} \]
+    We want the smallest element in each equivalence class mod \( 3 \), which is:
+    \[ \Ap(S) = \{ 0, 7, 5 \} \]
+    %\[ S = \{ 0, 3, \underbrace{5, 6, 7}, 8, 9, 10, \cdots \} \]
+    %Since 3 is the smallest generator, and 3 consecutive integers are included in \( S \), 
+\end{boxProblem}
+\begin{boxNote}{}
+    We note the following properties of \( \Ap(S) \):
+    \begin{itemize}
+        \item \( \abs{\Ap(S)} = m \)
+        \item the minimal generators of \( S \) are (except \( m (S) \) are in \( \Ap(S) \).
+    \end{itemize}
+\end{boxNote}
+% around 1:00:00 into 2021-06-28
+\begin{boxDefinition}{Apery Poset of S}
+    \begin{boxTODO}{}
+        
+    \end{boxTODO}
+\end{boxDefinition}
