@@ -1,0 +1,145 @@
+\chapter{Faces of Polyhedra}
+
+\begin{boxNote}{}
+    Here are some properties to test:\\
+    \begin{boxProblem}{}
+        For a polyhedra \( P \), \( \emptyset \) is a face of \( P \)
+        \tcblower
+    \end{boxProblem}
+    \begin{boxProblem}{}
+        For a polyhedra \( P \), \( P \) itself is a face of \( P \)
+        \tcblower
+    \end{boxProblem}
+    \begin{boxProblem}{}
+        For any Polytope \( P \), face \( F \) is the convex hull of vertices of \( P \) it contains.
+        \begin{boxNote}{V-Description}
+            This is called the V-Description.
+        \end{boxNote}
+    \end{boxProblem}
+    \begin{boxProblem}{}
+        Any face \( F \) is the intersection of the faces of \( P \) it contains.
+        \begin{boxNote}{H-Description}
+            This is called the H-Description.
+        \end{boxNote}
+    \end{boxProblem}
+\end{boxNote}
+
+\section{Face Structure of Polyhedra and Polytopes}
+\begin{boxDefinition}{The Face Lattice of a Polytope}
+    This is a poset via containment.
+    \begin{boxTODO}{}
+        Draw or copy from Thomas' book.
+    \end{boxTODO}
+\end{boxDefinition}
+\begin{boxTheorem}{}
+    A \( k \)-dimensional simplex has a face lattice that looks like a \( (k+1) \)-dimensional cube.
+\end{boxTheorem}
+\begin{boxTheorem}{}
+    A \( k \) dimensional simplex has a face lattice isomorphic to the poset of the powerset on \( (k+1) \)-elements.
+    \begin{boxTheorem}{}
+        
+    \end{boxTheorem}
+\end{boxTheorem}
+\begin{boxNote}{}
+    The degree of \( \emptyset \) is -1, by convension.
+\end{boxNote}
+\begin{boxNote}{}
+    A face lattice will always have "nice" rows, via dimension.
+\end{boxNote}
+\begin{boxNote}{}
+    Face latices can get complicated
+    \begin{boxTODO}{}
+        put sage output here.
+    \end{boxTODO}
+\end{boxNote}
+
+\begin{boxNote}{}
+    here are some combinatorial shapes
+    \begin{itemize}
+        \item simpliex
+        \item (?)
+        \item permutathedron
+        \item associahedron
+    \end{itemize}
+\end{boxNote}
+
+
+\begin{boxNote}{}
+\begin{boxProblem}{}
+    does every poset correspond to a face lattice.
+    \tcblower
+    Face lattices need bo be graded,
+    even further, they need to be eulerian.
+    \\
+    It is an open question:
+    "what are a list of requirements for a poset to be a face lattice"
+\end{boxProblem}
+\end{boxNote}
+
+\section{The permutahedron}
+\begin{boxConcept}{}
+    \( R_d \subseteq \RR^d \) is the convex hull of the points obtained by permuting the coordinates of:
+    \[ (1, 2, \cdots d ) \]
+    \begin{boxExample}{}
+        For example \( d = 3 \);
+        \[
+        \left\{
+        \begin{array}{c}
+            (1, 2, 3),\\
+            (1, 3, 2),\\
+            (2, 1, 3),\\
+            (2, 3, 1),\\
+            (3, 1, 2),\\
+            (3, 2, 1)
+        \end{array}
+        \right\}
+        \]
+    \end{boxExample}
+    \begin{boxTheorem}{}
+        The dimension of \( R_d \) is \( (d-1) \).
+    \end{boxTheorem}
+    \begin{boxTODO}{} draw \end{boxTODO}
+    \begin{boxNote}{}
+        Edges connect vertices where a single transposition is preformed and the two values being tranposed differ by 1.
+    \end{boxNote}
+    Now, we will represent this is a different notation.
+    \[ a|b|c \]
+    where
+    \begin{itemize}
+        \item \( a,b,c \in \{1, 2, \cdot, d \} \)
+        \item \( a \) is the first coordinate
+        \item \( b \) is the second coordinate
+        \item \( c \) is the third coordinate
+    \end{itemize}
+        \[
+        \left\{
+        \begin{array}{c}
+            (1, 2, 3),\\
+            (1, 3, 2),\\
+            (2, 1, 3),\\
+            (2, 3, 1),\\
+            (3, 1, 2),\\
+            (3, 2, 1)
+        \end{array}
+        \right\}
+        =
+        \left\{
+        \begin{array}{c}
+            1 | 2 | 3\\
+            1 | 3 | 2\\
+            2 | 1 | 3\\
+            3 | 1 | 2\\
+            2 | 3 | 1\\
+            3 | 2 | 1
+        \end{array}
+        \right\}
+        \]
+\end{boxConcept}
+
+Now, we stop for an interlude
+
+\section{ordered set partitions}
+\begin{boxTODO}{}
+    
+\end{boxTODO}
+
