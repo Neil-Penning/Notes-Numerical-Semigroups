@@ -1,12 +1,221 @@
-\chapter{}
-\begin{boxNote}{}
-    I havne't attended this lecture yet. Stay tuned for an update.
-\end{boxNote}
-\begin{boxTODO}{}
-    \begin{boxDefinition}{Polytope}
+\chapter{Polyhedral Polyhedral Geometry}
+\begin{boxConcept}{}
+    In Geometry and Research, it is harder to figure out what is true rather than how to prove it.
+
+    Having an intuitive picture of what's going on makes this a lot easier.
+\end{boxConcept}
+
+
+\section{Polyhedra}
+\begin{boxDefinition}{Half Space}
+    This is the solution set to an affine linear inequality:
+    \begin{boxDefinition}{Affine Linear Inequality}
+        An inequality in the terms of:
+        \[ a_1x_1 + a_2x_2 + \cdots + a_dx_d \leq b \]
+        Where \( a_i \in \RR \) (for us)
+        \begin{boxDefinition}{Affine}
+        Affine refers to \( b \neq 0 \). If \( b \) were strictly equal to 0, then this would be a strict linear inequality.
+        \end{boxDefinition}
     \end{boxDefinition}
-    \begin{boxDefinition}{Polyhedra}
-    \end{boxDefinition}
-    \begin{boxDefinition}{Cone}
-    \end{boxDefinition}
+\end{boxDefinition}
+\begin{boxDefinition}{Polyhedron}
+    The intersection of finitely many half-spaces in \( \RR^d \).
+    \begin{boxNote}{Polyhedron aren't nescissarily bounded.}
+    \end{boxNote}
+\end{boxDefinition}
+
+\begin{boxExample}{Simplex in \texorpdfstring{\(\RR^2\)}{R2}}
+    \begin{boxTODO}{}
+        This is the convex hull of \( (0,0), (0,1), (1,0) \)
+    \end{boxTODO}
+    \begin{boxTODO}{}
+    Fill in picture
+    \end{boxTODO}
+    \[
+    \left\{
+    \begin{array}{rl}
+        x_1 \geq 0\\
+        x_2 \geq 0\\
+        x_1 + x_2 \leq 1\\
+    \end{array}
+    \right.
+    \]
+\end{boxExample}
+
+\begin{boxExample}{Simplex in \texorpdfstring{\(\RR^3\)}{R3}}
+    \begin{boxTODO}{}
+        This is the convex hull of \( (0,0,0), (0,0,1), (0,1,0), (1,0,0) \)
+    \end{boxTODO}
+    \begin{boxTODO}{}
+    Fill in picture
+    \end{boxTODO}
+    \[
+    \left\{
+    \begin{array}{rl}
+        x_1 &\geq 0\\
+        x_2 &\geq 0\\
+        x_3 &\geq 0\\
+        x_1 + x_2 + x_3 &\leq 1
+    \end{array}
+    \right.
+    \]
+\end{boxExample}
+\begin{boxTODO}{Unbounded Polyhedron Example}
 \end{boxTODO}
+\begin{boxDefinition}{Simplex in \texorpdfstring{\(\RR^d\)}{Rd}}
+    We gave the examples of
+    \begin{boxTODO}{}
+        Reference R1 and R2
+    \end{boxTODO}
+\end{boxDefinition}
+\begin{boxDefinition}{Cube in \texorpdfstring{\(\RR^d\)}{Rd}}
+    \begin{boxTODO}{}
+        Insert cube def
+    \end{boxTODO}
+\end{boxDefinition}
+\begin{boxProblem}{Octahedron Problem}
+    \begin{boxTODO}{}
+        Inser octahedron from lecture.
+    \end{boxTODO}
+\end{boxProblem}
+\begin{boxDefinition}{Cross Polytope}
+    \begin{boxTODO}{}
+    Later
+    \end{boxTODO}
+\end{boxDefinition}
+
+\begin{boxNote}{}
+    Each facet has in inequality associcated with it.
+\end{boxNote}
+\begin{boxTheorem}{}
+    There is a unique, irredundent, half spaces to describe any polyhedron.
+    \begin{boxNote}{}
+        Irrendundent = no extras
+    \end{boxNote}
+\end{boxTheorem}
+
+
+\section{Bounded Polyhedra (Polytope)}
+\begin{boxConcept}{Polytope}
+    \begin{boxDefinition}{Polytope}
+        A polytope is a bounded polyhdron.
+        \begin{boxTODO}{}
+        Define bounded
+        \end{boxTODO}
+    \end{boxDefinition}
+    \begin{boxDefinition}{Convex Hull}
+        The convex hull of a set of points, is given by:
+        \[ \Conv\{v_1, v_2, \cdots, v_n\} = 
+            \{
+                \lambda_1v_1 + \cdots \lambda_nv_n
+                \ :\ \
+                lambda_i \in \RR^\geq 0
+                ,\ 
+                \lambda_1 + \cdots + \lambda_n = 1 
+            \}
+        \]
+        \begin{boxNote}{Shrink Wrap}
+            This is the unique smallest convex volume that contains all of \( v_i \).\\
+            This is obtained by "shrink wrapping", in a non-rigerous sense, the points of \( v_i \).
+        \end{boxNote}
+    \end{boxDefinition}
+    \begin{boxTheorem}{All Polytopes can be Expressed as a Convex Hull}
+    \end{boxTheorem}
+    \begin{boxExample}{}
+    \begin{boxTODO}{}
+        Give an example
+    \end{boxTODO}
+    \end{boxExample}
+\end{boxConcept}
+
+
+\begin{boxConcept}{V and H descriptions}
+    \begin{boxDefinition}{\texorpdfstring{\(H\)}{H}-Description}
+        The \( H \)-description of a polyhedra is in terms of \textbf{H}alfspaces.
+    \end{boxDefinition}
+    \begin{boxDefinition}{\texorpdfstring{\(V\)}{V}-Description}
+        The \( V \)-description of a polytope is in terms of \textbf{V}ectors.\\
+        That is, convex hulls.
+        Note that only bounded polyhedra (polytopes) have a \( V \)-description.
+    \end{boxDefinition}
+\end{boxConcept}
+
+\section{Cones}
+\begin{boxDefinition}{Cone}
+    A cone is a polyhedron where every half-space in its \( H \)-description has the origin on its boundary.
+    \begin{boxTheorem}{Alternate Cone Definition}
+        If each halfspace has 0 in its inequality. That is, \( b_i = 0 \) for all \( i \).
+    \end{boxTheorem}
+\end{boxDefinition}
+\begin{boxProblem}{}
+    All cones, except one, are unbounded.
+    Which cone is unbounded?
+\end{boxProblem}
+\begin{boxExample}{Example of a cone}
+    \begin{boxTODO}{}
+        Cone
+    \end{boxTODO}
+\end{boxExample}
+
+
+
+\section{Dimension of a Polyhedron}
+\begin{boxExample}{Motivation for Dimension}
+    Let
+    \[ P := \Conv\{ (1, 2), (2,3) \} \subset \RR^2 \]
+    \begin{boxTODO}{}
+    Insert image
+    \end{boxTODO}
+    If we naively assign \( \Dim P = 2 \), because it sits in \( \RR^2 \), it wouldn't be much help, as \( P \) is in reality a line.
+\end{boxExample}
+\begin{boxDefinition}{Dimension of a Polyhedron}
+    The dimension of a polyhedra is:
+    \[ \Dim(P) := \Dim \Span \{ x-y\ :\ x,y\in P \} \]
+    \tcblower
+    This merits some explaination.\\
+    We note if \( x = x \), then this gives us \( x - x = 0 \), which is simply the origin.
+    \begin{boxTODO}{}
+    Explain better
+    \end{boxTODO}
+\end{boxDefinition}
+
+\section{Faces of a Polyhedron}
+\begin{boxTODO}{Define Facet}
+    Did we define facets?
+\end{boxTODO}
+
+\begin{boxDefinition}{Face}
+    A Face of \( P \) is the intersection of \( P \) with the boundary of a halfspace containing \( P \).
+\end{boxDefinition}
+\begin{boxTODO}{}
+    Insert exmaples
+    \begin{boxExample}{}
+    \end{boxExample}
+    \begin{boxExample}{}
+    \end{boxExample}
+\end{boxTODO}
+\begin{boxDefinition}{Facet}
+    Let \( P \) be a polyhedron. A face \( F \) of \( P \) is a facet if:
+    \[ \Dim(F) = \Dim(P) - 1 \]
+\end{boxDefinition}
+\begin{boxDefinition}{Edge}
+    Let \( P \) be a polyhedron.
+    A face \( F \) of \( P \) is an edge if
+    \[ \Dim(F) = 1 \]
+\end{boxDefinition}
+\begin{boxTODO}{}
+\begin{boxDefinition}{Ridge}
+\end{boxDefinition}
+\begin{boxDefinition}{Co-Dimension}
+\end{boxDefinition}
+\end{boxTODO}
+
+\begin{boxTheorem}{}
+    Every face of a polyhedron is itself a polyhedron.
+\end{boxTheorem}
+
+
+\begin{boxExample}{The 4-cube}
+    Find all of the faces of the 4-cube.
+    \tcblower
+\end{boxExample}
