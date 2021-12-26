@@ -11,18 +11,56 @@
     \begin{tabular}{ll|ccr}
         pn & name & notation & definition & words
         \\
-        \hline
+        \hline 
         9 & Multiplicity & \(m(S)\) & \( n_1 \) & smallest generator  \\
         9 & Embedding Dimension & \(e(S)\) & p & number of generators  \\
         9 & Gaps & \(G(S)\) & \( \NN\setminus S \) & All numbers not in \( S \)  \\
         9 & Genus & \( g(S) \) & \( \abs{G(S)} \)  & Number of gaps  \\
           & Frobenius Number & \(F(S)\) & \( \max(G(S)) \) & Largest number not in \( S \)  \\
         9 & Conductor & &  \(F(S)+1\) &  \\
-        8 & Apery Set relative to & \(Ap(S,a)\) & & Numbers "barely" in \( S \) mod \( a \)  \\
+        8 & Apery Set relative to \( x \) & \(Ap(S,x)\) & \(\{ s \in S : s-x\not\in S\} \)  & Numbers "barely" in \( S \) mod \( x \) \\
           & Apery Set & \(Ap(S)\) & \(Ap(S,m(S))\) &  \\
-        13 & Pseudo Frobenius Numbers & \(PF(S)\) & \( S \setminus \{x\in\NN : x + s \in S \forall s\in S\} \)&  \\
+        13 & Pseudo Frobenius Numbers & \(PF(S)\) & \( \{x\in\NN\setminus S : x + s \in S \forall s\in S\setminus\{0\}\} \)&  \\
         13 & type & \(t(S)\) & \(\abs{PF(S)}\) & number of Pseudo Frobenius Numbers  
     \end{tabular}
     \end{center}
 \end{boxDefinition}
+\begin{boxExample}{}
+\begin{boxTODO}{}
+    Check if correct; calculated by hand
+\end{boxTODO}
+    For a numerical semigroup 
+        \[
+        S = \gen{6, 9, 20}
+        =
+            \left\{
+                \begin{array}{l}
+                    \mathbf{6} , 12, 18, 24, 30, 36, 42, 48, 54, \cdots\\
+                    \mathbf{49}, 55, \cdots\\
+                    \mathbf{20}, 26, 32, 38, 44, 50, 56, \cdots\\
+                    \mathbf{9} , 15, 21, 27, 33, 39, 45, 51, \cdots\\
+                    \mathbf{40}, 46, 52, \cdots\\
+                    \mathbf{29}, 35, 41, 47, 53, \cdots
+                \end{array}
+            \right\}
+        \]
+    \begin{center}
+    \begin{tabular}{l|l}
+        Name & value
+        \\
+        \hline 
+        Multiplicity & \(m(S) = 6\) \\
+        Embedding Dimension & \(e(S) = 3\) \\
+        Gaps & 
+            \( G(S) = \{1, 2, 3, 4, 5, 7, 8, 10, 11, 13, 14, 16, 17, 19, 22, \mathbf{23}, 25, 28, 31, \mathbf{34}, 37, \mathbf{43}\}\) \\
+        Genus & 
+            \(g(S) = 22 \) \\
+        Frobenius Number & \(F(S) = 43 \) \\
+        Conductor & \( C(S) = 44 \)\\
+        Apery Set & \(Ap(S) = \{ 6, 49, 20, 9, 40, 29\} \) \\
+        Pseudo Frobenius Numbers & \(PF(S) = \{23, 34, 43\}\) \\
+        type & \(t(S) = 3 \) \\
+    \end{tabular}
+    \end{center}
+\end{boxExample}
 \end{landscape}
